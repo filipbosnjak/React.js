@@ -1,3 +1,12 @@
 First step when starting any project is always:
 npm init -y 
 This creates package.json. This file holds all the info about our project: name, version, packages installed etc.
+
+Then we go and type npx create-react-app app-name
+
+This will get us everything we need to work on our react app
+
+-> index.js - entry point to our app
+-> In there we have .render() method where we specify where we want to render our app
+-> We render it in <div class <div id="root"></div>
+-> We insert all our react components inside that div
