@@ -1,0 +1,3 @@
+First step when starting any project is always:
+npm init -y 
+This creates package.json. This file holds all the info about our project: name, version, packages installed etc.
