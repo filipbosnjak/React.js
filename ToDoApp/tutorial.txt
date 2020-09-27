@@ -6,7 +6,11 @@ Then we go and type npx create-react-app app-name
 
 This will get us everything we need to work on our react app
 
+
+-> We have our index.html. It is our home page.
 -> index.js - entry point to our app
 -> In there we have .render() method where we specify where we want to render our app
 -> We render it in <div class <div id="root"></div>
--> We insert all our react components inside that div
+-> We insert all our react components inside that div trough the .render() method. 
+
+-> We can start our app in a live-server way via node package manager -> npm start
