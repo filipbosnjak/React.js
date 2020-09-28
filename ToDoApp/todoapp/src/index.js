@@ -6,9 +6,13 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* Comment in JSX */}
-     {/* Here we add all our components we want to render */}
-     <div>MyName</div>
+
+
+      {/* Comment in JSX */}
+      {/* Here we add all our components we want to render */}
+      <div>MyName</div>
+
+      
     <App />
   </React.StrictMode>,
   document.getElementById('root')
