@@ -8,7 +8,7 @@ ReactDOM.render(
   <React.StrictMode>
 
 
-    {/* Comment in JSX */}
+    {/* Comment in JSX - We have to use curly brackets only when commenting inside of JSX*/}
     {/* Here we add all our components we want to render */}
     <div>MyName</div>
 
