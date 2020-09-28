@@ -19,7 +19,9 @@ class Todos extends Component{
 }
 
 //Here we define proptypes
-
+// Todos.propTypes -> propTypes p shouldnt be capital
+//We put an array.isRequired because what we are passing as props is an ARRAY of objects
+//In TodoItem for eg. we have a single object
 Todos.propTypes = {
     todos: PropTypes.array.isRequired
 }
