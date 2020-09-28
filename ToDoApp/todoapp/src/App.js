@@ -20,6 +20,7 @@ class App extends Component {
         <div className="class">Hello World</div>
         <Todos todos = {this.state.todos}/> {/*Passing todos to Todos class AS A PROP - property. We can console.log it in Todos class*/}
       </div>
+       
   );}
 }
 

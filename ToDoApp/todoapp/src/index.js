@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* Comment in JSX - We have to use curly brackets only when commenting inside of JSX*/}
+    {/* Comment in JSX - We have to use curly brackets only when commenting inside of JSX TAGS!*/}
     {/* Here we add all our components we want to render */}
     <App />
   </React.StrictMode>,
