@@ -18,6 +18,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="class">Hello World</div>
+        {/* Here we add all of the components */}
         <Todos todos = {this.state.todos}/> {/*Passing todos to Todos class AS A PROP - property. We can console.log it in Todos class*/}
       </div>
        
