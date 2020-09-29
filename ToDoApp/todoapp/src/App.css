@@ -1,21 +1,104 @@
+:root{
+ --myBg:rgb(212, 204, 204);
+ --fontColor:rgb(0, 0, 0);
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
 body{
     line-height: 1.4;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #c94b4b;  
+    background: -webkit-linear-gradient(to right, #4b134f, #c94b4b);  
+    background: linear-gradient(to right, #4b134f, #c94b4b);
 }
+.todos{
+    width: 350px;
+    color: var(--myBg);
+    font-weight: 200;
+}
+
+.todos header{
+    padding:18px 0;
+    background-color: var(--myBg);
+    border-radius: 10px;
+    text-align: center;
+    color: var(--fontColor) ;
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.pre{
+    padding: 5px 0;
+    background-color: var(--myBg);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.todos footer{
+    padding: 5px 0;
+    background-color: var(--myBg);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.todo{
+    border-radius: 20px;
+}
+.todos .todo label{
+    position: relative;
+    display: block;
+    padding: 14px 16px;
+    cursor: pointer;
+    background-color: var(--myBg);
+    color:var(--fontColor);
+    font-size: 18px;
+    font-weight: 300;
+    transition: .5s ease;
+}
+.todos .todo label:hover{
+    transform: translateX(-1em);
+    border-radius: 10px;
+
+}
+.todos .todo input[type=checkbox]{
+    position: absolute;
+    width: 0;height: 0;
+    visibility: hidden;
+}
+.todos .todo label::before{
+    content:'';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 1px solid var(--fontColor);
+    border-radius:10px;
+} 
+
+/*
 a{
     color:#333;
     text-decoration: none;
 }
 .title{
     font-weight: 400;
-    color: blueviolet;
+    text-align: center;
+    font-size: large;
+    
 }
 h3{
     margin: 20px;
-    font-weight: 400;
+    font-weight: 300;
+    text-align: center;
 }
+.todos{
+    width: 100%;
+}
+
+*/
