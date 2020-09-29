@@ -9,6 +9,7 @@ class TodoItem extends Component {
             <div className="todo">
                 <input type="checkbox" id="do"/>
                 <label htmlFor="do">
+                    <i className="fas fa-check"></i>
                     <span className="label">{this.props.todo.title}</span>{/* todo objects are being passed here as props and we can use them like this*/}
                 </label> 
             </div>

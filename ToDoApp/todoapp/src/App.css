@@ -79,8 +79,35 @@ body{
     height: 24px;
     border: 1px solid var(--fontColor);
     border-radius:10px;
+    vertical-align: middle;
+    margin-right: 8px;
 } 
-
+.todos .todo label::after{
+    content:'';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    background-color: #c94b4b;
+    transition: .4s ease-in-out;
+}
+.todos .todo label:hover::after{
+    width: 6px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.todos .todo label .fa-check{
+    position: absolute;
+    font-size: 25px;
+    left: 19px;
+    color: #bb144c;
+    opacity: 0;
+    transition: .5s ease-in-out;
+}
+.todos .todo input[type=checkbox]:checked + label .fa-check{
+    opacity: 1;
+}
 /*
 a{
     color:#333;
