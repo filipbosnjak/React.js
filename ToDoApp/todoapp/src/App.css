@@ -42,6 +42,17 @@ body{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
+form{
+    display: flex;
+}
+.input{
+    flex:10;
+    padding:5px;
+}
+.inputBtn{
+    flex:1;
+}
+
 .todos footer{
     padding: 5px 0;
     background-color: var(--myBg);
@@ -119,16 +130,18 @@ body{
     background: -webkit-linear-gradient(to right, #4b134f, #c94b4b);  
     background: linear-gradient(to right, #4b134f, #c94b4b);
     color: var(--myBg);
-    padding:8px;
+    padding: 8px;
     border-radius: 10px;
     outline: none;
     border: none;
     transition: .4s ease-in-out;
     cursor: pointer;
+    vertical-align: middle;
 }
 .btn:hover{
     transform: scale(1.1);
 }
+
 /*
 a{
     color:#333;
