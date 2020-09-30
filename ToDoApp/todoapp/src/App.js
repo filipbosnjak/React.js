@@ -6,6 +6,9 @@ import Header from './components/layout/Header';
 import AddTodo from './components/AddTodo';
 import Todos from "./components/Todos";
 
+//For random id generation
+import {v4 as uuid} from 'uuid';
+
 
 class App extends Component {
   
@@ -13,9 +16,9 @@ class App extends Component {
   state = {//  ->  Js object
     todos:[//  ->  Array of objects
       
-      {id:1,title:'Todo 1 aFSADGS AFGFGSD FGSDFGSDFGDFSDDS',completed:false},
-      {id:2,title:'Todo 2',completed:false},
-      {id:3,title:'Todo 3',completed:true},
+      {id:uuid(),title:'Todo 1',completed:false},
+      {id:uuid(),title:'Todo 2',completed:false},
+      {id:uuid(),title:'Todo 3',completed:true},
 
   ]
   }
@@ -38,6 +41,16 @@ class App extends Component {
     //console.log('clicked');
   }
 
+  addTodo = (title) => {
+    this.setState({//We pass an object here fyi
+      todos:[...this.state.todos,{//Here goes ne object
+        id:uuid(),//this.state.todos.length, -> like this we get a next available position in an array
+        title,
+        completed:false
+      }]
+    })
+  }
+
   render(){
     return (
 
@@ -48,7 +61,7 @@ class App extends Component {
         <div className="todos">
 
           <Header/>
-          <AddTodo/>
+          <AddTodo addTodo={this.addTodo}/>
           <Todos todos = {this.state.todos} markComplete={this.markComplete} delTodo={this.delTodo}/> {/*Passing todos to Todos class AS A PROP - property. We can console.log it in Todos class*/}
           <footer></footer>
 
