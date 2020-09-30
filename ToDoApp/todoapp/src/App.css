@@ -55,7 +55,6 @@ body{
     position: relative;
     display: block;
     padding: 14px 16px;
-    cursor: pointer;
     background-color: var(--myBg);
     color:var(--fontColor);
     font-size: 18px;
@@ -105,12 +104,30 @@ body{
     color: #bb144c;
     opacity: 0;
     transition: .5s ease-in-out;
+    cursor: pointer;
 }
 .todos .todo input[type=checkbox]:checked + label .fa-check{
     opacity: 1;
 }
 .todos .todo input[type=checkbox]:checked + label .label{
     text-decoration: line-through;
+}
+.btn{
+    float: right;
+    /*background-color: rgb(156, 148, 148);*/
+    background: #c94b4b;  
+    background: -webkit-linear-gradient(to right, #4b134f, #c94b4b);  
+    background: linear-gradient(to right, #4b134f, #c94b4b);
+    color: var(--myBg);
+    padding:8px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    transition: .4s ease-in-out;
+    cursor: pointer;
+}
+.btn:hover{
+    transform: scale(1.1);
 }
 /*
 a{

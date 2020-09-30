@@ -12,7 +12,7 @@ class Todos extends Component{
             
             this.props.todos.map( (todo) => ( //We're iterating trough the array of obj and each element should get a key
             /*<h3>{todo.title}</h3>*/         //Otherwise we get a warning: Each child in a list should have a unique "key" prop.
-            <TodoItem key={todo.id}  todo={todo} markComplete={this.props.markComplete}/> //Todo - that one from the arrow function argument is being passed
+            <TodoItem key={todo.id}  todo={todo} markComplete={this.props.markComplete} delTodo={this.props.delTodo}/> //Todo - that one from the arrow function argument is being passed
             ))                        //as a prop named todo - {todo}
         );
     }

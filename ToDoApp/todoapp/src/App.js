@@ -24,6 +24,13 @@ class App extends Component {
       return todo; //Now we can see in Chrome Dev Tools in the props how state is dynamicaly changing
     })});
   }
+  delTodo = (id) => {
+    this.setState({todos:this.state.todos.filter( (todo) => {
+      return todo.id !== id;
+      
+    })})
+    //console.log('clicked');
+  }
   render(){
     return (
       <div className="App">
@@ -32,7 +39,7 @@ class App extends Component {
         <div className="todos">
         <header>TodoApp</header>
         <div className="pre"></div>
-          <Todos todos = {this.state.todos} markComplete={this.markComplete}/> {/*Passing todos to Todos class AS A PROP - property. We can console.log it in Todos class*/}
+          <Todos todos = {this.state.todos} markComplete={this.markComplete} delTodo={this.delTodo}/> {/*Passing todos to Todos class AS A PROP - property. We can console.log it in Todos class*/}
         <footer></footer>
         </div>
       </div>
