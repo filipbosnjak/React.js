@@ -61,6 +61,7 @@ body{
     font-size: 18px;
     font-weight: 300;
     transition: .5s ease;
+    
 }
 .todos .todo label:hover{
     transform: translateX(-1em);
@@ -107,6 +108,9 @@ body{
 }
 .todos .todo input[type=checkbox]:checked + label .fa-check{
     opacity: 1;
+}
+.todos .todo input[type=checkbox]:checked + label .label{
+    text-decoration: line-through;
 }
 /*
 a{

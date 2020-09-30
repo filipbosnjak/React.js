@@ -14,3 +14,5 @@ This will get us everything we need to work on our react app
 -> We insert all our react components inside that div trough the .render() method. 
 
 -> We can start our app in a live-server way via node package manager -> npm start
+
+<input type="checkbox" id={`${this.props.todo.id}`}/> -> We could have done this differently

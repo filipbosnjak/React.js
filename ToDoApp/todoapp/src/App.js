@@ -14,6 +14,16 @@ class App extends Component {
 
   ]
   }
+
+  markComplete = (id) => {
+    //console.log(id);
+    this.setState({ todos: this.state.todos.map( (todo) => {//.map() - executes a given function on an every element of an array and returns new array
+       if(todo.id === id){
+        todo.completed = !todo.completed;
+      }
+      return todo; //Now we can see in Chrome Dev Tools in the props how state is dynamicaly changing
+    })});
+  }
   render(){
     return (
       <div className="App">
@@ -22,7 +32,7 @@ class App extends Component {
         <div className="todos">
         <header>TodoApp</header>
         <div className="pre"></div>
-          <Todos todos = {this.state.todos}/> {/*Passing todos to Todos class AS A PROP - property. We can console.log it in Todos class*/}
+          <Todos todos = {this.state.todos} markComplete={this.markComplete}/> {/*Passing todos to Todos class AS A PROP - property. We can console.log it in Todos class*/}
         <footer></footer>
         </div>
       </div>
