@@ -9,6 +9,7 @@ import Todos from "./components/Todos";
 
 class App extends Component {
   
+  //App-level state. We share this state with the components of our app
   state = {//  ->  Js object
     todos:[//  ->  Array of objects
       
@@ -45,7 +46,7 @@ class App extends Component {
         {/* Here we add all of the components */}
 
         <div className="todos">
-          
+
           <Header/>
           <AddTodo/>
           <Todos todos = {this.state.todos} markComplete={this.markComplete} delTodo={this.delTodo}/> {/*Passing todos to Todos class AS A PROP - property. We can console.log it in Todos class*/}
