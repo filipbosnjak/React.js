@@ -47,10 +47,31 @@ form{
 }
 .input{
     flex:10;
-    padding:5px;
+    padding:10px;
+    outline: none;
+    display: block;
+    background:#d16e56 ;
+    border: 0;
+    border-radius: 25px;
+    padding: 12px 20px;
+    color: snow;
+    margin-bottom: 10px;
+    margin-right: 3px;
+    font-size: 16px;
+
+}
+input::placeholder{
+    color:rgb(196, 179, 179);
 }
 .inputBtn{
     flex:1;
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: none;
+    margin-bottom: 10px;
+    background:#d16e56 ;
+    color: white;
+
 }
 
 .todos footer{
@@ -59,8 +80,11 @@ form{
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
+
 .todo{
     border-radius: 20px;
+    white-space:wrap;
+    
 }
 .todos .todo label{
     position: relative;
@@ -136,12 +160,20 @@ form{
     border: none;
     transition: .4s ease-in-out;
     cursor: pointer;
-    vertical-align: middle;
 }
 .btn:hover{
     transform: scale(1.1);
 }
-
+.footer{
+    margin-top: 10px;
+    text-align: center;
+}
+.footer a{
+    color: rgb(12, 5, 1);
+}
+p{
+    padding: 2px;
+}
 /*
 a{
     color:#333;

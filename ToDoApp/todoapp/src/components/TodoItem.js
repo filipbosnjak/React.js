@@ -26,7 +26,7 @@ class TodoItem extends Component {
                     <span className="label">{title}</span>{/* todo objects are being passed here as props and we can use them like this*/}
                     <button className="btn" onClick={this.props.delTodo.bind(this,id)}>Delete</button>
                 </label> 
-
+                
             </div>
             
         );

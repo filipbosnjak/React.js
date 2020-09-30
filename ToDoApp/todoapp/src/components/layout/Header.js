@@ -6,7 +6,6 @@ function Header() {
     return(
         <div>
             <header>TodoApp</header>
-            <div className="pre"></div>
         </div>
     )
 }

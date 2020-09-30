@@ -62,8 +62,14 @@ class App extends Component {
 
           <Header/>
           <AddTodo addTodo={this.addTodo}/>
+          <div className="pre"></div>
           <Todos todos = {this.state.todos} markComplete={this.markComplete} delTodo={this.delTodo}/> {/*Passing todos to Todos class AS A PROP - property. We can console.log it in Todos class*/}
           <footer></footer>
+          <div className="footer">
+            <p>Find the app code on my <a href="https://github.com/filipbosnjak/React.js/tree/master/ToDoApp" target="_blank">Github</a> page</p>
+            <p> Copyright &copy; 2020 Filip Bošnjak</p>
+          </div>
+
 
         </div>
       </div>
