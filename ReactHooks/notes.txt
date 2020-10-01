@@ -1,1 +1,13 @@
     	    React Hooks
+
+React Hooks let us use state and other React features without writing a class.
+So we can use state for eg. in a functional component
+
+We cant: -> use hooks with class components
+         -> use hooks inside loops, conditions or nested functions
+
+We have to import them like:
+    import React, { useState }  from 'react'; -> We import it with object destructuring
+
+useState - replacement for class-based state
+
