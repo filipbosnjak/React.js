@@ -1,0 +1,8 @@
+button{
+  margin: 5px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  background-color: cornflowerblue;
+  outline: none;
+}
