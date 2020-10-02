@@ -6,3 +6,7 @@ button{
   background-color: cornflowerblue;
   outline: none;
 }
+.first{
+  display: flex;
+  margin:20px;
+}
