@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import { UseForm } from './UseForm';
 
 /*
@@ -28,6 +28,10 @@ const UseState = () => {
    let [value, handleChange] = UseForm({email:'',password:''});
     //What we can do here is to create our own custom hook that will update both email and adress
     
+    useEffect(() =>{
+        console.log('Changed!')
+    } ,[value.email]) //With the second parameter we specify what we want to watch for change. For eg. now c.log will fire off whenever we change an email but not the password,
+                      //If we passed: value for eg. it would 'watch' both email and password
     
     
     return(
