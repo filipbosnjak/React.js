@@ -1,6 +1,7 @@
 import React from 'react';
 import UseState from './hooks/UseState'
 import './App.css';
+import Person from './Person'
 
 
 
@@ -13,6 +14,7 @@ const App = () => {
       <div>Introducing React Hooks</div>
       
       <UseState/>
+      <Person/>
 
     </div>
   );
