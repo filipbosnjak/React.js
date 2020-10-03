@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 
 class Person extends Component{
+
     state = {
         person:[
             {id:Math.round(Math.random()*10000000),name:'Filip',age:23},
@@ -10,8 +11,9 @@ class Person extends Component{
         ],
         visible:true
     }
+
     toggler = () => {
-       //return !this.state.visible
+       //return !this.state.visible -> Not good
        this.setState({visible: !this.state.visible})
     }
     nameChangedHandler = (event,id) => {
@@ -37,7 +39,7 @@ class Person extends Component{
     render(){
 
         return(
-
+        
         <div>
         {this.state.person.map((person) => {
             return (
