@@ -10,18 +10,7 @@ function timeExpensiveFunction() {
 //Functional (or function-based) component
 const UseState = () => {
 
-    let state = {
-        person:[
-            {
-                name:'Filip',
-                age:23
-            },
-            {
-                name:'Karla',
-                age:20
-            }
-        ]
-    }
+    
     //Array Destructuring -> useState returns an array of TWO elements - one is the state itself and the other is a function that updates the state -> [VALUE,UPDATE_VALUE]
     let [count, setCount] = useState(10)  /* () => timeExpensiveFunction(); We call it like so cause now the func is called on only first rendering*/
 
