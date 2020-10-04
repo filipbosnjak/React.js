@@ -58,10 +58,14 @@ class Root extends Component {
                 />
             )
             case 3: return(
-                <h1>Confirm</h1>
+                <Confirm
+                values={values}
+                next={this.next}
+                prev={this.prev}
+                />
             )
             case 4: return(
-                <h1>Success</h1>
+                <Success/>
             )
         }
     }

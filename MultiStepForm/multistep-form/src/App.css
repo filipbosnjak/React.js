@@ -38,7 +38,7 @@
   }
 }
 .TextField{
-  margin: 40px 0px;
+  margin: 20px 0px;
 }
 .nxtBtn{
   margin: 40px 0px;
@@ -48,4 +48,13 @@
   justify-content: space-between;
   width:230px;
   margin:0 auto;
+}
+.h1{
+  width: 80%;
+  margin: 50px auto;
+  font-weight: 400;
+  color:rgb(119, 114, 114);
+}
+.dot{
+  font-weight: 100;
 }
