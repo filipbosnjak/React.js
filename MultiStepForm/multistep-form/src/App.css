@@ -43,3 +43,9 @@
 .nxtBtn{
   margin: 40px 0px;
 }
+.btns{
+  display: flex;
+  justify-content: space-between;
+  width:230px;
+  margin:0 auto;
+}

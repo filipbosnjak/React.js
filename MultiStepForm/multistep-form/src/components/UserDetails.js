@@ -12,6 +12,10 @@ export class UserDetails extends Component {
         event.preventDefault();
         this.props.next();
     }
+    goBack = (event) => {
+        event.preventDefault();
+        this.props.prev();
+    }
     render() {
 
         const {values,handleChange} = this.props;

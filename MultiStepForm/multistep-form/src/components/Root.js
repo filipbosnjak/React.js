@@ -21,7 +21,7 @@ class Root extends Component {
 
     next = () => {
         const {step} = this.state;
-        this.setState({step:step+1});
+        this.setState( {step:step+1} );
     }
 
     prev = () => {
@@ -29,7 +29,8 @@ class Root extends Component {
         this.setState({step:step-1});
     }
 
-    handleChange = (input) =>(event)=> {
+    handleChange = (input) =>(event)=> {//handleChange is an arrow function that takes in input parameter and return
+                                        //another function that takes event as a parameter and so on..
         this.setState({[input]:event.target.value});
         //this.setState({[event.target.name]:event.target.value})
     }
