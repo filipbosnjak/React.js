@@ -14,7 +14,7 @@ class Person extends Component{
 
     toggler = () => {
        //return !this.state.visible -> Not good
-       this.setState({visible: !this.state.visible})
+       this.setState({visible: !this.state.visible})// setState does merging of the object so we dont have to worry about the rest of the state
     }
     nameChangedHandler = (event,id) => {
         

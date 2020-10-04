@@ -1,0 +1,6 @@
+Redux - state management system 
+
+Redux is a pattern and LIBRARY for managing and updating application state 
+For that we use events called actions
+
+Redux provides us with global state and lets us update it
