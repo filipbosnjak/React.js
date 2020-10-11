@@ -4,25 +4,33 @@ import * as AiIcons from "react-icons/ai";
 import {Link} from 'react-router-dom';
 import './Navbar.css'
 import {NavData} from './NavData';
+import {IconContext} from 'react-icons';
 
 
 const Navbar = () => {
 
     const [sidebar,setSidebar] = useState(false);
 
+    const style = {
+        color:'#fff'
+    }
+
     return (
         <React.Fragment>
+            <IconContext.Provider value={style}>
             <div className="bg">
             <div className="navbar">
-                <Link to="#" className="menu-bars">
-                    <FaIcons.FaBars onClick={() => setSidebar(!sidebar)}/>
-                </Link>
+                <IconContext.Provider value={{color:'rgb(83, 79, 79)'}}>
+                    <Link to="#" className="menu-bars">
+                        <FaIcons.FaBars onClick={() => setSidebar(!sidebar)}/>
+                    </Link>
+                </IconContext.Provider>
             </div>
 
             <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
                 <ul className="nav-menu-items">
-                    <li className="navbar-toggle">
-                        <Link to="#" className='menu-bars'>
+                    <li className="navbar-toggle" onClick={() => setSidebar(!sidebar)}>
+                        <Link to="#" className='close'>
                             <AiIcons.AiOutlineClose/>
                         </Link>
                     </li>
@@ -39,6 +47,7 @@ const Navbar = () => {
                 </ul>
             </nav>
             </div>
+            </IconContext.Provider>
         </React.Fragment>
     )
 }
