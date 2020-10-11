@@ -10,3 +10,6 @@ button{
   display: flex;
   margin:20px;
 }
+.name{
+  margin-left: 20px;
+}

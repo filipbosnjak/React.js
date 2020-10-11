@@ -2,6 +2,7 @@ import React from 'react';
 import UseState from './hooks/UseState'
 import './App.css';
 import Person from './Person'
+import UsestateHook from './UsestateHook';
 
 
 
@@ -15,7 +16,7 @@ const App = () => {
       
       <UseState/>
       <Person/>
-      
+      <UsestateHook/>
 
     </div>
   );
