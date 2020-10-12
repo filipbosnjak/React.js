@@ -26,19 +26,14 @@
 .nav-menu{
     width: 250px;
     height:90vh;
-    background: #00c6ff;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #0072ff, #00c6ff);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #0072ff, #00c6ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
-
+    background: #0072ff;
     border-radius: 20px;
     display: flex;
     justify-content: center;
     position: fixed;
     top: 50px;
     left: -100%;
-    transition: .3s ease-in;
+    transition: 1.8s ease-in-out;
     z-index: 2;
 }
 .active{
@@ -48,9 +43,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /*padding: 8px 0px 8px 16px;*/
     list-style: none;
     margin:10px 0;
+    padding: 10px 0;
 }
 .nav-text a{
     text-decoration: none;
@@ -59,9 +54,10 @@
     height:100%;
     display: flex;
     align-items: center;
-    padding: 2px 26px;
+    padding: 2px 46px;
+    width: 40%;
     border-radius: 4px;
-    margin: 20px 0;
+    margin: 5px 0;
     background-color: rgba(15, 15, 15,0.08);
     transition: .3s ease-in-out;
 }
@@ -74,4 +70,8 @@
 }
 .nav-menu-items{
     width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    margin: 20px auto;
 }
