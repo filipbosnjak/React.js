@@ -18,7 +18,7 @@ const Navbar = () => {
     return (
         <React.Fragment>
             <IconContext.Provider value={style}>
-            <div className="bg">
+            
             <div className="navbar">
                 <IconContext.Provider value={{color:'rgb(83, 79, 79)'}}>
                     <Link to="#" className="menu-bars">
@@ -46,7 +46,6 @@ const Navbar = () => {
                     })}
                 </ul>
             </nav>
-            </div>
             </IconContext.Provider>
         </React.Fragment>
     )
