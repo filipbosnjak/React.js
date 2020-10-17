@@ -36,7 +36,7 @@ const Navbar = () => {
                     </li>
                     {NavData.map( (dataObj , i) => {
                         return(
-                            <li key={i} className={dataObj.className}>
+                            <li key={i} className={dataObj.className} onClick={() => setSidebar(curr => !curr)}>
                                 <Link to={dataObj.path}>
                                     {dataObj.icon}
                                     <span>{dataObj.lable}</span>
