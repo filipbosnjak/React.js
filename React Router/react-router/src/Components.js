@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import {Link} from 'react-router-dom';
 
 export const Home = ({location , match , history}) => { //Passed props from Route
@@ -40,13 +40,17 @@ export const Contact = ({history}) => {
 
 export const Posts = ({match}) => {
     const check = (id) => {
-        let num = id
-        console.log(num)
-        num === ':id' ? num = '/' : num = id
-        return num; 
+        id === ':id' ? id = '0' : console.log()
+        return id; 
     }
- 
+    let id = match.params.id;
+
+      React.useEffect(() => {
+    // //     fetch(`api.example.com/posts/${match.example.id}`).then(res => res.json()).then(...)
+         console.log(`Called: fetch(api.example.com/posts/${id}).then(res => res.json()).then(data => usingData(data))...) `);
+      } , [id]) //We //listen here for a change in the id
+    
     return(
-    <div>Rendering post {check(match.params.id)} </div>
+    <div>Rendering post {check(match.params.id)} {/*JSX!!*/} </div> //Javascript /* We can now use this id - eg. would be we can fetch sth from the api  */
     )
 }
