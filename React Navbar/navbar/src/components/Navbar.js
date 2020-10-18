@@ -29,7 +29,7 @@ const Navbar = () => {
 
             <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
                 <ul className="nav-menu-items">
-                    <li className="navbar-toggle" onClick={() => setSidebar(!sidebar)}>
+                    <li className="navbar-toggle" onClick={() => {setSidebar(!sidebar)}}>
                         <Link to="#" className='close'>
                             <AiIcons.AiOutlineClose/>
                         </Link>

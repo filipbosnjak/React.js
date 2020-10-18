@@ -6,6 +6,13 @@
     background: linear-gradient(to right, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
+::-webkit-scrollbar{
+    width:5px;
+    background-color: #353b48;
+}
+::-webkit-scrollbar-thumb{
+    background-color: white;
+}
 .title{
     width:100%;
     text-align:center;
@@ -32,7 +39,7 @@
     display:flex;
     align-items: center;
     justify-content:space-between;
-    
+    min-height:59.33px;
     padding: auto;
     margin: auto;
     background-color: rgba( 255,255, 255, 0.1);
@@ -48,14 +55,18 @@
 
 .movie-over{
     position: absolute;
-    background-color: #fff;
-    bottom: -130%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    bottom: 0;
     left: 0;
     right: 0;
     opacity: 0;
     transition: .4s ease-in;
+    height: 300px;
+    overflow: auto;
+    padding: 0 2px;
 }
  .active{
     opacity:1;
-    bottom: 0;
+    bottom: 17.5%;
 }

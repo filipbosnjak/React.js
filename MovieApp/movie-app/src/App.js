@@ -17,6 +17,8 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [genres , setGenres] = useState([]);
 
+  const active = true;
+
   useEffect(() => {
       fetch(FEAUTURED_API)
         .then((res) => res.json())
@@ -40,7 +42,7 @@ function App() {
       <div className="title">Movie App</div>
       {/*Remember: inside jsx we cant write js code outside currly braces {} */}
       {movies.map( (movie) => {
-        return <Movie key={movie.id} data={movie} genreData={genres} active1={false} /*data={movie}*//>
+        return <Movie key={movie.id} data={movie} genreData={genres} active1={active} /*data={movie}*//>
       })}
     </div>
   );
