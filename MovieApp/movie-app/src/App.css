@@ -11,17 +11,51 @@
     text-align:center;
     padding:20px 0;
     color: white;
+    font-size:25px;
+    font-weight:300;
 }
 
 .movie{
     width:200px;
     margin:0 auto;
-    
+    position: relative;
 }
 
 .movie img{
     max-width:100%;
+    transition: .3s ease-in;
+}
+.movie img:hover{
+    transform: scale(1.03);
 }
 .movie-info{
+    display:flex;
+    align-items: center;
+    justify-content:space-between;
     
+    padding: auto;
+    margin: auto;
+    background-color: rgba( 255,255, 255, 0.1);
+
+    
+}
+.movie-info h3{
+    margin: 5px auto;
+}
+.movie-info span{
+    margin: auto;
+}
+
+.movie-over{
+    position: absolute;
+    background-color: #fff;
+    bottom: -130%;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: .4s ease-in;
+}
+ .active{
+    opacity:1;
+    bottom: 0;
 }

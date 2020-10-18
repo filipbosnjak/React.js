@@ -22,7 +22,7 @@ function App() {
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
-          console.log(data.results[0].genre_ids[0])
+          //console.log(data.results[0].genre_ids[0])
           setMovies(data.results)});
   } , [])
 
@@ -30,7 +30,7 @@ function App() {
     fetch(GENRE_API)
       .then(res => res.json())
       .then((data) => {
-        console.log(data);
+        //console.log(data);
         setGenres(data);
       })
   } , [])//With empty array like that useEffect hook will run only once. That way we fetch genres only once
@@ -40,7 +40,7 @@ function App() {
       <div className="title">Movie App</div>
       {/*Remember: inside jsx we cant write js code outside currly braces {} */}
       {movies.map( (movie) => {
-        return <Movie key={movie.id} data={movie} genreData={genres} /*data={movie}*//>
+        return <Movie key={movie.id} data={movie} genreData={genres} active1={false} /*data={movie}*//>
       })}
     </div>
   );
