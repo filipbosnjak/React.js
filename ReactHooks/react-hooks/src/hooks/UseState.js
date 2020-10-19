@@ -81,6 +81,7 @@ const UseState = () => {
                     }}
                     */
                 />
+                <div>{value.email} {value.password}</div>
                
             </div>
         </React.Fragment>

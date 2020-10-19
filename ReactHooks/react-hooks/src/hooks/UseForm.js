@@ -15,3 +15,5 @@ export const UseForm = (initialValue) => {
 }
 //Now we can use this hook in any of our components
 //We dont have any UI just logic inside. This is where hooks shine
+
+//Important to note: when we defined a return function like that we can just call it in the UseState component like onChange={handleChange}

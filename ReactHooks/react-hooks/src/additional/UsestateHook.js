@@ -6,7 +6,7 @@ const UsestateHook = () => {
     return (
         <div className="name">
             <button onClick={(e) => {
-                console.log(e);//We get an event
+                //console.log(e);//We get an event
                 setVar( (cur) => {
                     return {
                         ...cur,
@@ -16,6 +16,9 @@ const UsestateHook = () => {
             }}>-</button>
             <p>{x}</p>
             <p>{y}</p>
+            <button onClick={() => setVar((curr) => {
+                return {...curr,y: curr.y +1}
+            })}>+</button>
 
         </div>
     )

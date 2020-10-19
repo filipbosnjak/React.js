@@ -1,9 +1,8 @@
 import React from 'react';
 import UseState from './hooks/UseState'
 import './App.css';
-import Person from './Person'
-import UsestateHook from './UsestateHook';
-
+import Person from './additional/Person'
+import UsestateHook from './additional/UsestateHook';
 
 
 const App = () => {
@@ -15,8 +14,12 @@ const App = () => {
       <div>Introducing React Hooks</div>
       
       <UseState/>
+      
+      {/*
       <Person/>
       <UsestateHook/>
+      <UseStateH00k/>
+      */}
 
     </div>
   );
