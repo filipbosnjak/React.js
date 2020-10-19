@@ -13,4 +13,6 @@ useState - replacement for class-based state
 
 this hook is plenty useful when working with forms
 
+with defining UseForm hook (function) we managed to encapsulate the logic inside a hook and after that we can reuse it all over the place
+
 useEffect - hook that lets us call a function whenever our functional component is being rerendered

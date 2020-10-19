@@ -3,6 +3,7 @@ import UseState from './hooks/UseState'
 import './App.css';
 import Person from './additional/Person'
 import UsestateHook from './additional/UsestateHook';
+import UseEffect from './hooks/UseEffect';
 
 
 const App = () => {
@@ -13,8 +14,8 @@ const App = () => {
 
       <div>Introducing React Hooks</div>
       
-      <UseState/>
-      
+      <UseEffect/>
+
       {/*
       <Person/>
       <UsestateHook/>

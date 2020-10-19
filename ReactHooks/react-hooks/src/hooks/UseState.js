@@ -26,7 +26,7 @@ const UseState = () => {
     let [email,setEmail] = useState('');
     let [password,setPassword] = useState('');
     */
-   let [value, handleChange] = UseForm({email:'',password:''});
+   let [value, setValue] = UseForm({email:'',password:'',firstName:''});
     //What we can do here is to create our own custom hook that will update both email and adress
     
     useEffect(() =>{
@@ -64,7 +64,7 @@ const UseState = () => {
                     placeholder="email"
                     name='email'
                     value={value.email}
-                    onChange={handleChange}
+                    onChange={setValue}
                         /*(e) => {
                         setEmail(e.target.value)
                     }}*/
@@ -74,7 +74,7 @@ const UseState = () => {
                     placeholder="password"
                     name='password'
                     value= {value.password}
-                    onChange={handleChange}
+                    onChange={setValue}
                         /*
                         (e) => {
                         setPassword(e.target.value)
@@ -82,7 +82,7 @@ const UseState = () => {
                     */
                 />
                 <div>{value.email} {value.password}</div>
-               
+                <input type="text" name="firstName" placeholder="FirstName" value={value.firstName} onChange={setValue}/>
             </div>
         </React.Fragment>
     )
