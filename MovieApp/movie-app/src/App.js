@@ -16,6 +16,7 @@ function App() {
   
   const [movies, setMovies] = useState([]);
   const [genres , setGenres] = useState([]);
+  const [search ,setSearch] = useState('');
 
   const active = true;
 
@@ -36,14 +37,42 @@ function App() {
         setGenres(data);
       })
   } , [])//With empty array like that useEffect hook will run only once. That way we fetch genres only once
+
+  const handleChange = (e) => {
+    e.preventDefault()
+    setSearch(e.target.value)
+    console.log(e.target.value)
+  }
+
+  const handleSubmit = (e) =>{ //This function handles submit. Whether the user pressed enter or clicked search icon we take what he typed and fetch to the search api
+    e.preventDefault()
+    //console.log(search) 
+    
+  }
   
   return (
     <div className="App">
+      
+      
       <div className="title">Movie App</div>
+      <form className="form" onSubmit={handleSubmit}>
+          <input className="searchBar" type="text" name="search" placeholder="Search Movies..." onChange={handleChange}/>
+          <a href="" className="btn" onClick={handleSubmit}>
+              <i className="fas fa-search"></i>
+          </a>
+      </form> 
+
+
+      
+      <div className="movies">
       {/*Remember: inside jsx we cant write js code outside currly braces {} */}
+      
       {movies.map( (movie) => {
         return <Movie key={movie.id} data={movie} genreData={genres} active1={active} /*data={movie}*//>
       })}
+
+      </div>
+
     </div>
   );
 }

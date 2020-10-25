@@ -1,6 +1,5 @@
 .App{
-    display:flex;
-    flex-wrap:wrap;
+    position: relative;
     background: #373B44;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -13,13 +12,63 @@
 ::-webkit-scrollbar-thumb{
     background-color: white;
 }
+
 .title{
     width:100%;
     text-align:center;
-    padding:20px 0;
+    padding:15px 0;
     color: white;
     font-size:25px;
     font-weight:300;
+    position: fixed;
+    z-index: 1;
+    background: #373B44;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.form{
+    z-index: 2;
+    position: absolute;
+    right: 0;
+    top:10px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+
+}
+.form .searchBar{
+    background-color: rgba( 255,255, 255, 0.1);
+    width: 100px;
+    padding: 5px;
+    border-radius: 7px;
+    outline: none;
+    border: none;
+    opacity: 0;
+    width: 0;
+    color: white;
+    transition: .5s ease-in-out;
+    
+}
+.form .btn{
+    color: seashell;
+    background-color: rgba( 255,255, 255, 0.1);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:20px;
+}
+.form:hover >  .searchBar{
+    width: 80px;
+    opacity: 1;
+}
+.movies{
+    top: 40px;
+    position: relative;
+    display:flex;
+    flex-wrap:wrap;
 }
 
 .movie{
@@ -38,20 +87,24 @@
 .movie-info{
     display:flex;
     align-items: center;
-    justify-content:space-between;
-    min-height:59.33px;
+    justify-content:space-evenly;
+    overflow-y: scroll;
+    white-space: wrap;
+    height:59.33px;
     padding: auto;
     margin: auto;
     background-color: rgba( 255,255, 255, 0.1);
-
-    
 }
 .movie-info h3{
-    margin: 5px auto;
+    margin: 0px auto;
+    padding: 0px 5px;
+    max-height: 59.33px;
 }
 .movie-info span{
-    margin: auto;
+    margin: auto 15px;
 }
+
+
 
 .movie-over{
     position: absolute;
