@@ -3,7 +3,7 @@
     background: #373B44;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    height: 130vh;
 }
 ::-webkit-scrollbar{
     width:5px;
@@ -12,36 +12,42 @@
 ::-webkit-scrollbar-thumb{
     background-color: white;
 }
-
-.title{
-    width:100%;
-    text-align:center;
-    padding:15px 0;
-    color: white;
-    font-size:25px;
-    font-weight:300;
-    position: fixed;
+.header{
     z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    height: 10vh;
+    width: 100%;
     background: #373B44;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
+.title{
+    padding:15px 0;
+    color: white;
+    font-size:25px;
+    font-weight:300;
+    
+}
 .form{
     z-index: 2;
     position: absolute;
     right: 0;
-    top:10px;
+    top:3vh;
     display: flex;
     align-items: center;
-    position: fixed;
+    position: absolute;
+    
 
 }
 .form .searchBar{
     background-color: rgba( 255,255, 255, 0.1);
-    width: 100px;
-    padding: 5px;
+    padding: 15px 5px;
     border-radius: 7px;
+    font-size: 18px;
     outline: none;
     border: none;
     opacity: 0;
@@ -49,6 +55,9 @@
     color: white;
     transition: .5s ease-in-out;
     
+}
+.form .searchBar::placeholder{
+    color: rgba( 255,255, 255, 0.5);
 }
 .form .btn{
     color: seashell;
@@ -59,13 +68,18 @@
     align-items: center;
     justify-content: center;
     border-radius:20px;
+    transition: .5s ease-in;
+    margin-left:2px;
 }
 .form:hover >  .searchBar{
-    width: 80px;
+    width: 190px;
     opacity: 1;
 }
+.form:hover >  .btn{
+    transform:scale(1.1)
+}
 .movies{
-    top: 40px;
+    top: 10vh;
     position: relative;
     display:flex;
     flex-wrap:wrap;
@@ -75,14 +89,15 @@
     width:200px;
     margin:0 auto;
     position: relative;
+    transition: .3s ease-in;
 }
 
 .movie img{
     max-width:100%;
-    transition: .3s ease-in;
+    
 }
-.movie img:hover{
-    transform: scale(1.03);
+.movie:hover{
+    transform: scale(1.02);
 }
 .movie-info{
     display:flex;
@@ -103,8 +118,22 @@
 .movie-info span{
     margin: auto 15px;
 }
-
-
+.red{
+    color: rgb(231, 31, 31);
+    font-weight: bold;
+}
+.orange{
+    color: rgba(187, 74, 74, 0.705);
+    font-weight: bold;
+}
+.light-green{
+    color: rgb(47, 180, 76);
+    font-weight: bold;
+}
+.green{
+    color: rgb(23, 248, 71);
+    font-weight: bold;
+}
 
 .movie-over{
     position: absolute;
@@ -122,4 +151,34 @@
  .active{
     opacity:1;
     bottom: 17.5%;
+}
+@media (max-width: 600px) {
+    .header{
+        height: 130px;
+        border: none;
+    }
+    .form{
+        top:80px;
+        right:10px;
+    }
+    .form .searchBar{
+        padding: 10px 5px;
+    }
+    .movies{
+        top:130px;
+    }
+    .movie{
+        width: 150px;
+    }
+    .movie-over{
+        height: 238px;
+    }
+    .form .searchBar{
+        width: 0;
+        opacity: 0;
+    }
+    .form:hover >  .searchBar{
+        width: 75vw;
+        opacity: 1;
+    }
 }

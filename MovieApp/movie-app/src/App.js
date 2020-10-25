@@ -16,7 +16,7 @@ function App() {
   
   const [movies, setMovies] = useState([]);
   const [genres , setGenres] = useState([]);
-  const [search ,setSearch] = useState('');
+  const [search , setSearch] = useState('Mission');
 
   const active = true;
 
@@ -24,7 +24,7 @@ function App() {
       fetch(FEAUTURED_API)
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
+          //console.log(data);
           //console.log(data.results[0].genre_ids[0])
           setMovies(data.results)});
   } , [])
@@ -47,21 +47,28 @@ function App() {
   const handleSubmit = (e) =>{ //This function handles submit. Whether the user pressed enter or clicked search icon we take what he typed and fetch to the search api
     e.preventDefault()
     //console.log(search) 
-    
+    if(search){
+    fetch(SEARCH_API+search)
+      .then(res => res.json())
+      .then(data => {
+        setMovies(data.results)
+        
+      })
+    }    
   }
   
   return (
     <div className="App">
       
-      
-      <div className="title">Movie App</div>
-      <form className="form" onSubmit={handleSubmit}>
-          <input className="searchBar" type="text" name="search" placeholder="Search Movies..." onChange={handleChange}/>
-          <a href="" className="btn" onClick={handleSubmit}>
-              <i className="fas fa-search"></i>
-          </a>
-      </form> 
-
+      <div className="header">
+        <div className="title">Movie App</div>
+        <form className="form" onSubmit={handleSubmit}>
+            <input className="searchBar" type="text" name="search" placeholder="Search Movies..." onChange={handleChange}/>
+            <a href="" className="btn" onClick={handleSubmit}>
+                <i className="fas fa-search"></i>
+            </a>
+        </form> 
+      </div>
 
       
       <div className="movies">
