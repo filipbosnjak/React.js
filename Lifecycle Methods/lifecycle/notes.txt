@@ -1,0 +1,90 @@
+Router
+
+import 
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+
+    Everything needs to be wrapped inside a Router component - 
+    <Router>
+
+        <Link to="/">Home</Link>
+
+        <-> matching to="/" and path="/" - better mapping if we put the exact keyword
+
+        <Switch>
+            <Route path="/">
+                <Home/> -> {/* Actuall component*/}
+            </Route>
+
+            <Route path="/" component={Home}/>
+
+        </Switch>
+
+    </Router>
+
+
+    Template:
+
+->  index.js
+
+    import { BrowserRouter as Router} from "react-router-dom";
+
+    ReactDOM.render(
+        <Router>
+            <App/>
+        <Router/>
+    )
+
+->  Nav.js
+    
+    import {Navlink} from "react-router-dom";
+
+    <Navlink exact to="/"> Home <Navlink/>
+    .
+    .
+    .links...
+
+->  Page.js 
+
+    import {Route , Switch} from 'react-router-dom'
+    import Nav
+
+    Switch - in here we use Route to specify which component we want to render/switch to depending on a 
+
+    <Switch>
+
+        Two ways of doing the same thing. Latter much more elegant
+
+        <Route exact path="/workflow" component={Workflow} />
+
+        <Route exact path="/">
+            <Discussion/>
+        </Route>
+
+    <Switch/>
+
+Lifecycle methods ->
+
+// ------- MOUNTING - 4 ------- \\
+
+-> constructor()
+
+-> getDerivedStateFromProps()
+
+-> render() - before render state should be ready to use - best to care of that in constructor or getDerivedStateFromProps
+
+-> componentDidMount() -> starting necessary processes for the component
+
+
+// ------- UPDATING - 4 ------- \\
+
+
+->render() and getDerivedStateFromProps() are called only when the component itself mounted or state/props changed - THis makes React very efficient
+
+
+// ------- UNMOUNTING - 4 ------- \\
+
+componentWillUnmount() - Last to be called before after component unmounts
+  

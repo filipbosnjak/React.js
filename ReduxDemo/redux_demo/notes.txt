@@ -1,0 +1,6 @@
+Redux installation:
+
+npm i redux react-redux redux-thunk
+
+-> bringing in provider - glue between react and redux - react component
+-> wrap everything in a provider in app.js
