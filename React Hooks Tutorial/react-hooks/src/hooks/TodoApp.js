@@ -6,6 +6,7 @@ function TodoApp() {
   const ACTIONS = {
     ADD_TODO: "addtodo",
     DEL_TODO: "deltodo",
+    COMPLETED: "completed",
   };
 
   const newTodo = (name) => {
@@ -22,12 +23,27 @@ function TodoApp() {
     return newTodos;
   };
 
+  const completedTodo = (state, id) => {
+    // let newTodo = { ...state[index] };
+    // newTodo.completed = !state[index].completed;
+    // state[index] = newTodo;
+    // console.log(state);
+    // return state;
+    //console.log(id);
+    return state.map((todo, index) => {
+      return todo.id === id ? { ...todo, completed: !todo.completed } : todo;
+    });
+  };
+
   const reducer = (state, action) => {
     switch (action.type) {
       case ACTIONS.ADD_TODO:
         return [...state, newTodo(action.payload.name)];
       case ACTIONS.DEL_TODO:
         return deleteTodo(state, action.payload.index);
+      case ACTIONS.COMPLETED:
+        return completedTodo(state, action.payload.id);
+
       default:
         return state;
     }
@@ -41,6 +57,7 @@ function TodoApp() {
     e.preventDefault();
     dispatch({ type: ACTIONS.ADD_TODO, payload: { name: name } });
     setName("");
+    console.log(state);
   };
 
   return (
@@ -63,6 +80,16 @@ function TodoApp() {
                 {index + 1}.) {todo.name}
               </p>
               <p>{todo.completed ? "Completed" : "Not Completed"}</p>
+              <button
+                onClick={() =>
+                  dispatch({
+                    type: ACTIONS.COMPLETED,
+                    payload: { id: todo.id },
+                  })
+                }
+              >
+                Completed
+              </button>
               <button
                 onClick={() => {
                   dispatch({
