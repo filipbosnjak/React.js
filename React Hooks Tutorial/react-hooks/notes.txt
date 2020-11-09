@@ -1,0 +1,23 @@
+const [] = useReducer(reducer , {count : 0})
+
+useReducer - hook for managing state 
+takes in reducer - a function that updates the state and
+         initial state - 
+
+Kinda like useState hook
+
+const [state , dispatch]
+
+dispatch - makes a call to a reducer function based on which reducer we want to use
+
+- reducer function - takes in state and action - 
+    action has types that tells reducer what to do given a certain type
+
+
+after reducers and state is initialized -
+
+first dispatch is called and it takes action and payload - 
+
+dispatch() comunicates with reducer and sends it actions object with type and payload
+
+reducer based on a given action performs operations requested on a state

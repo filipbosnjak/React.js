@@ -87,4 +87,5 @@ Lifecycle methods ->
 // ------- UNMOUNTING - 4 ------- \\
 
 componentWillUnmount() - Last to be called before after component unmounts
+
   
