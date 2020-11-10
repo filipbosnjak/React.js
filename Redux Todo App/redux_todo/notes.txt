@@ -1,0 +1,47 @@
+Redux Tutorial and Setup
+
+App organization
+
+node_modules
+public/
+src/
+  actions/
+  components/ ->App.js
+  containers/
+  reducers/
+.gitignore
+package.json
+README.md
+
+We have our components and some of them triggers an event. 
+That triggers a dispatch() function that sends object {type:... ,payload:...}
+This is the info that we need to update the state
+
+In actions folder we have index.js with some actions like:
+
+const someAction = (args) => {
+    return {
+        type: 'WHAT_WE_WANT_TO_DO',
+        payload: {
+            what else the : action needs
+        }
+    }
+}
+
+In reducers folder we create our reducers.
+Reducers are functions that we give an action object and our state and
+based on action.type the update the state. They use payload content if needed
+
+We combine all the reducers in index.js of reducers folder like This
+
+import { combineReducers } from 'redux'
+import todosReducer from './todos-reducer'
+import filterReducer from './filter-reducer'
+
+const rootReducer = combineReducers({
+  todosReducer,
+  filterReducer
+})
+
+export default rootReducer
+
