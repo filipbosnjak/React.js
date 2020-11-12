@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import Todo from "./Todo";
+import { addTodo } from "../actions";
+import { connect } from "react-redux";
 
 export class AddTodo extends Component {
   constructor(props) {
@@ -16,7 +17,7 @@ export class AddTodo extends Component {
   //   this.setState({ text: "" });
   // };
   render() {
-    const { handleSubmit, todos, deleteTodo } = this.props;
+    const { handleSubmit } = this.props;
     //console.log(todos);
     // let arr = [1, 2, 3, 4, 5];
     // console.log(
@@ -31,7 +32,9 @@ export class AddTodo extends Component {
           <form
             onSubmit={(e) => {
               e.preventDefault();
-              handleSubmit(this.state.text, Date.now());
+              if (this.state.text) {
+                handleSubmit(this.state.text);
+              }
               this.setState({ text: "" });
             }}
             className="form"
@@ -50,21 +53,20 @@ export class AddTodo extends Component {
           </form>
           {/* <div>{this.props.title}</div> */}
         </div>
-        <div className="todos">
-          {todos.map((todo) => {
-            return (
-              <Todo
-                key={todo.id}
-                text={todo.text}
-                completed={todo.completed}
-                deleteTodo={deleteTodo}
-              />
-            );
-          })}
-        </div>
       </React.Fragment>
     );
   }
 }
 
-export default AddTodo;
+const mapStateToProps = (state) => {
+  return {};
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleSubmit: (text) => {
+      dispatch(addTodo(text));
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddTodo);

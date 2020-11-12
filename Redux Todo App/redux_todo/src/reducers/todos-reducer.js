@@ -16,7 +16,7 @@ const todoReducer = (state = [], action) => {
       return [
         ...state,
         {
-          id: action.payload.id,
+          id: Date.now(),
           text: action.payload.text,
           completed: false,
         },
@@ -30,11 +30,18 @@ const todoReducer = (state = [], action) => {
       });
     case "DELETE_TODO":
       return state.filter((todo) => {
-        console.log(todo);
-        console.log(action.payload.id);
+        //console.log(todo);
+        //console.log(action);
         return todo.id !== action.payload.id;
       });
-
+    case "CLEAR_ALL":
+      return [];
+    case "COMPLETED_TODO":
+      return state.map((todo) => {
+        return todo.id === action.payload.id
+          ? { ...todo, completed: !todo.completed }
+          : todo;
+      });
     default:
       return state;
   }

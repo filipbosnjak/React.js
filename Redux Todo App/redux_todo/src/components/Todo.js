@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { deleteTodo } from "../actions";
+import { completedTodo } from "../actions";
 
 export class Todo extends Component {
   //Not necessary
@@ -8,15 +11,30 @@ export class Todo extends Component {
   }
 
   render() {
-    const { id, text, completed, deleteTodo } = this.props;
+    const { id, text, completedTodo, deleteTodo, completed } = this.props;
     return (
       <div className="todo" key={id}>
-        <p className="text">{text}</p>
-        <p className="completed">{JSON.stringify(completed)}</p>
-        <button onClick={() => deleteTodo(id)}>Delete</button>
+        <div className={completed ? "overlined text" : "text"}>{text}</div>
+        <button className="done" onClick={() => completedTodo(id)}>
+          Done
+        </button>
+        <button className="delete" onClick={() => deleteTodo(id)}>
+          Delete
+        </button>
       </div>
     );
   }
 }
 
-export default Todo;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    deleteTodo: (id) => {
+      dispatch(deleteTodo(id));
+    },
+    completedTodo: (id) => {
+      dispatch(completedTodo(id));
+    },
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Todo);

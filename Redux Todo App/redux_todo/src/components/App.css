@@ -45,8 +45,24 @@ input {
   outline: none;
   animation: button 2s infinite ease-in-out;
 }
+.clearAll {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5vh;
+  margin-bottom: 15px;
+}
+.clearAll button {
+  background-color: rgb(35, 63, 221);
+  color: aliceblue;
+  width: 65px;
+  height: 30px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
 .todos {
-  width: 20%;
+  width: 650px;
   margin: 0 auto;
   word-wrap: break-word;
   border-radius: 10px;
@@ -61,10 +77,13 @@ input {
 }
 .todo .text {
   align-self: center;
-  width: 230px;
   word-wrap: break-word;
+  width: auto;
 }
-.todo button {
+.overlined {
+  text-decoration: line-through;
+}
+.todo .delete {
   align-self: center;
   background-color: rgb(209, 17, 17);
   color: white;
@@ -73,6 +92,18 @@ input {
   height: 25px;
   outline: none;
   border-radius: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+.todo .done {
+  align-self: center;
+  background-color: rgb(19, 168, 19);
+  color: white;
+  border: none;
+  width: 55px;
+  height: 25px;
+  outline: none;
+  border-radius: 10px;
+  margin-right: 5px;
   transition: transform 0.2s ease-in-out;
 }
 .todo button:hover {
@@ -93,8 +124,7 @@ input {
     transform: scale(1);
   }
 }
-
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 900px) {
   input {
     width: 250px;
   }
@@ -102,6 +132,28 @@ input {
     width: 85%;
   }
   .todo .text {
-    width: 200px;
+    width: 190px;
+  }
+}
+@media screen and (max-width: 700px) {
+  input {
+    width: 250px;
+  }
+  .todos {
+    width: 85%;
+  }
+  .todo .text {
+    width: 190px;
+  }
+}
+@media screen and (max-width: 380px) {
+  input {
+    width: 250px;
+  }
+  .todos {
+    width: 85%;
+  }
+  .todo .text {
+    width: 150px;
   }
 }

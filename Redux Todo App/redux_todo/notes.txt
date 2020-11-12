@@ -49,8 +49,10 @@ export default rootReducer
 In components folder we separate the components that need to care about the 
 state and the ones that dont statefull/stateless
 
-Containers: act as the middle men between the Redux store that knows about 
-state, and the presentation component ready to render it on the page.
+To subscribe a component to a store we need connect method from 'react-redux'
 
-They act as a connection between store that holds the state and 
-component that needs it
+We need to define two methods: mapStateToProps and mapDispatchToProps
+They do exactly what their name says. In mapStateToProps we map the store state with the names we want to pass as props to that component
+In mapDispatchToProps we define methods we want to fire off. In those methods call dispatch funcion and we pass it a result of the actions 
+Actions are functions that return action object. They take type - what we want to do in the store and payload - what will be needed to preform that - data like ids or state content
+ 
