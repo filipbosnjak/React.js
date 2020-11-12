@@ -1,6 +1,23 @@
-Redux - state management system 
+Redux - state management system (Udemy - Max)
 
 Redux is a pattern and LIBRARY for managing and updating application state 
 For that we use events called actions
 
 Redux provides us with global state and lets us update it
+
+Component - event - dispatch - action - reducer updates the store (global state) based of the action - all the subscribed components are updated
+
+npm install redux react-redux
+
+Store in index.js - we are letting react know that the whole app will be using that store
+
+We then connect store with our rootReducer function
+
+In a rootReducer we combine all the other reducers - import combineReducers from redux and import all the reducers we want to combine and then:
+
+const rootReducer = combineReducers({
+  todosReducer,
+  filterReducer,
+});
+
+Each reducer takes a state and an action. Based on the content of the action object it updates the state in a store

@@ -1,7 +1,18 @@
+import React, { Component } from "react";
 import "./App.css";
 
-function App() {
-  return <div className="App">Hello</div>;
+import Header from "./Header";
+import AddTodoFormContainer from "../containers/AddTodoFormContainer";
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        <AddTodoFormContainer />
+      </div>
+    );
+  }
 }
 
 export default App;

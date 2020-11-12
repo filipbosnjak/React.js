@@ -16,6 +16,14 @@ export const toggleTodo = (id) => {
     },
   };
 };
+export const deleteTodo = (id) => {
+  return {
+    type: "DELETE_TODO",
+    payload: {
+      id: id,
+    },
+  };
+};
 export const setFilter = (filter) => {
   return {
     type: "SET_FILTER",

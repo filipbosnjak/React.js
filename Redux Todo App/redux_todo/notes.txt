@@ -45,3 +45,12 @@ const rootReducer = combineReducers({
 
 export default rootReducer
 
+
+In components folder we separate the components that need to care about the 
+state and the ones that dont statefull/stateless
+
+Containers: act as the middle men between the Redux store that knows about 
+state, and the presentation component ready to render it on the page.
+
+They act as a connection between store that holds the state and 
+component that needs it
