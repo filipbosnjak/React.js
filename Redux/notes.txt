@@ -21,3 +21,25 @@ const rootReducer = combineReducers({
 });
 
 Each reducer takes a state and an action. Based on the content of the action object it updates the state in a store
+
+If we want to subscribe component to a store we need to import connect method from 'react-redux'
+Now under container we need to create two functions: mapStateToProps and mapDispatchToProps that do exactly that.
+
+const mapStateToProps = (state) => {
+    return {
+        text: state.text -> Here we list props we want to pass to component we want to suscribe and we map it to a store state
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        someFunction : (args) => {
+            dispatch{
+                type: 'ACTION_TYPE',
+                payload: 'stuff needed to update the store state'
+            }
+        }
+    }
+}
+
+export default connect(mapStateToProps , mapDispatchToProps)(Component) - like this we call connect method that returns a function and we call with passing the Component 
