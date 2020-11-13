@@ -48,3 +48,16 @@
   justify-content: space-around;
   height: 30px;
 }
+.light {
+  background-color: antiquewhite;
+}
+.dark {
+  background-color: black;
+  color: aliceblue;
+}
+.blue {
+  background-color: blue;
+}
+.green {
+  background-color: green;
+}

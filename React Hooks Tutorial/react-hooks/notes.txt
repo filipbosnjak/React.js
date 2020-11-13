@@ -21,3 +21,16 @@ first dispatch is called and it takes action and payload -
 dispatch() comunicates with reducer and sends it actions object with type and payload
 
 reducer based on a given action performs operations requested on a state
+
+useCallback ->
+
+const function = useCallback( () => {
+    ...
+    someFunction
+    ...
+} , [dependencies] )
+
+useCallback returns a function and watches for the dependencies in an array - if the dependencies change function is recreated
+Else it is not. If we rerendered the component without useCallback it would recreate the function over and over again
+We use it only when we need to care about referential equality. Usually used with useEffect
+We use it when our function is not changign
