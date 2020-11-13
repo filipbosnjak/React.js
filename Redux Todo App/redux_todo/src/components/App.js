@@ -5,6 +5,7 @@ import Header from "./Header";
 import AddTodo from "./AddTodo";
 import ClearAll from "./ClearAll";
 import Todos from "./Todos";
+import Footer from "./Footer";
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
         <AddTodo />
         <ClearAll />
         <Todos />
+        <Footer />
       </div>
     );
   }

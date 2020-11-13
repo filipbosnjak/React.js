@@ -5,6 +5,9 @@
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
+.App {
+  position: relative;
+}
 .header {
   height: 15vh;
   display: flex;
@@ -60,6 +63,10 @@ input {
   border: none;
   outline: none;
   border-radius: 5px;
+  transition: transform 0.2s ease-in-out;
+}
+.clearAll button:hover {
+  transform: scale(1.1);
 }
 .todos {
   width: 650px;
@@ -112,7 +119,23 @@ input {
 .todo .completed {
   align-self: center;
 }
-
+.link {
+  text-decoration: none;
+  animation: link 3s infinite ease-in-out;
+  font-size: 20px;
+  transition: 0.3s ease-in-out;
+}
+.link:hover {
+  transform: scale(1.1);
+}
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  margin-top: 40px;
+}
 @keyframes button {
   0% {
     transform: scale(1);
@@ -122,6 +145,20 @@ input {
   }
   100% {
     transform: scale(1);
+  }
+}
+@keyframes link {
+  0% {
+    color: red;
+  }
+  33% {
+    color: blue;
+  }
+  66% {
+    color: green;
+  }
+  100% {
+    color: red;
   }
 }
 @media screen and (max-width: 900px) {
