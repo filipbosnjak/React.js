@@ -1,0 +1,17 @@
+npm init
+
+npm install react react-dom
+
+npm i --save-dev webpack webpack-dev-server webpack-cli - installs webpack - module bundler as a dev dependencies
+
+npm i --save-dev babel-core babel-loader babel-preset-env babel-preset-react html-webpack-plugi - bable is for compiling es6 javascript i jsx 
+
+webpack - we always need config file ->
+
+-comments in tje webpack.config.js file
+
+We have to add babel .babelrc with presets : { presets: ["env" , "react"]}
+
+In package.json - scripts
+
+"start": "webpack-dev-server --mode development --open",  to start dev server with npm start
