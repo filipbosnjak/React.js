@@ -1,5 +1,8 @@
+.chats {
+  overflow-y: auto;
+}
 .sidebar {
-  flex: 0.35;
+  flex-grow: 1;
   height: 100vh;
   display: flex;
   flex-direction: column;

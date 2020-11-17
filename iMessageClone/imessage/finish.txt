@@ -1,0 +1,11 @@
+firebase init
+
+pick hosting
+
+use existing project
+
+pick a project
+
+build and y
+
+npm run build

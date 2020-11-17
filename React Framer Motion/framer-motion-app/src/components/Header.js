@@ -23,7 +23,7 @@ function Header() {
         animate={{ y: -10, opacity: 1 }}
         transition={{ default: { duration: 1 } }}
       >
-        <h1>Pizza Joint</h1>
+        <h1>Peperoncini</h1>
       </motion.div>
     </header>
   );

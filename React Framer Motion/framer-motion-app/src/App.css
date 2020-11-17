@@ -126,6 +126,9 @@ li span.active::before {
 .order p {
   margin: 20px auto;
 }
+.order h2 {
+  margin: 50px auto;
+}
 @keyframes animate {
   0% {
     transform: translateY(0px);
@@ -141,5 +144,8 @@ li span.active::before {
   h2 {
     width: 90%;
     margin: 0 auto;
+  }
+  .home h2 {
+    font-size: 25px;
   }
 }
