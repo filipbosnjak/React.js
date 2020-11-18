@@ -1,0 +1,39 @@
+.message {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: fit-content;
+  justify-content: space-between;
+  margin: 15px;
+}
+.message > p {
+  background-color: #f3f3f5;
+  font-size: medium;
+  padding: 15px;
+  border-radius: 20px;
+  margin: 10px;
+  margin-right: auto;
+}
+.message > small {
+  color: gray;
+  position: absolute;
+  font-size: 12px;
+  bottom: -8px;
+  right: -45px;
+  width: 170px;
+}
+.sender {
+  margin-left: auto;
+  left: 0px;
+}
+.messagePhoto {
+  order: 0;
+}
+.sender > .messagePhoto {
+  order: 1;
+  margin: 15px;
+}
+.sender > p {
+  background-color: #3cabfa;
+  color: white;
+}

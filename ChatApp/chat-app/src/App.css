@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.login { display: flex; align-items: center; justify-content: center; flex-direction: column; }
+
+.loginLogo { animation: float 2s infinite ease-in-out; }
+
+.messagesIcon { width: 500px; height: 500px; color: #3e93fd; margin-top: 50px; }
+
+.MuiSvgIcon-root { font-size: 2rem; }
+
+.loginButton { background-color: #3e93fd; color: white; width: 150px; height: 50px; border: none; outline: none; border-radius: 10px; font-size: 24px; margin-top: 70px; }
+
+.loginTitle { margin: 40px 0; font-size: 50px; font-weight: 200; }
+
+@keyframes float { 0% { transform: translateY(0px); }
+  50% { transform: translateY(30px); }
+  100% { transform: translateY(0px); } }
+
+.App { display: flex; height: 100vh; }
+
+.chats { overflow-y: auto; overflow-x: hidden; }
+
+.sidebar { flex-grow: 1; height: 100vh; display: flex; flex-direction: column; background-color: aliceblue; border-right: 1px solid lightgray; }
+
+.header { display: flex; align-items: center; padding: 10px; height: 50px; }
+
+.avatar { cursor: pointer; margin: 10px; }
+
+.input { display: flex; align-items: center; justify-content: center; flex: 1; background-color: #e1e1e1; color: gray; border-radius: 5px; }
+
+.input > input { border: none; background: transparent; outline: none; }
+
+.chat { display: flex; flex-direction: column; flex-grow: 17; height: 100vh; background-color: white; }
+
+.chatHeader { padding: 10px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid lightgray; background-color: #f5f5f5; }
+
+.chatMessages { flex: 1; overflow-y: auto; -ms-overflow-style: none; scrollbar-width: none; display: flex; flex-direction: column-reverse; }
+
+.chatMessages::-webkit-scrollbar { display: none; }
+
+.chatInput { display: flex; align-items: center; justify-content: space-between; padding: 10px 20px; border-top: 1px solid lightgray; background-color: #f5f5f5; }
+
+.chatInput > form { display: flex; justify-content: center; width: 100%; }
+
+.chatInput > form > input { width: 100%; outline-width: 0; border: 1px solid lightgray; border-radius: 999px; padding: 5px; }
+
+.logoutButton { background-color: #3e93fd; color: white; width: 60px; height: 30px; border: none; outline: none; border-radius: 5px; font-size: 14px; margin-right: 10px; }
+
+.message { display: flex; align-items: center; position: relative; width: fit-content; justify-content: space-between; margin: 15px; }
+
+.message > p { background-color: #f3f3f5; font-size: medium; padding: 15px; border-radius: 20px; margin: 10px; margin-right: auto; }
+
+.message > small { color: gray; position: absolute; font-size: 12px; bottom: -8px; right: -45px; width: 170px; }
+
+.sender { margin-left: auto; left: 0px; }
+
+.messagePhoto { order: 0; }
+
+.sender > .messagePhoto { order: 1; margin: 15px; }
+
+.sender > p { background-color: #3cabfa; color: white; }
+
+.sidebarChat { width: 100%; display: flex; padding: 20px; border-bottom: 1px solid lightgray; cursor: pointer; }
+
+.sidebarChat:hover { background-color: #3e93fd; color: white; }
+
+.sidebarChatInfo { margin-left: 15px; position: relative; width: 100%; }
+
+.sidebarChatInfo > small { position: absolute; top: 5px; right: 0px; }
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: "Montserrat", sans-serif; }
+/*# sourceMappingURL=App.css.map */

@@ -1,0 +1,36 @@
+.chats {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.sidebar {
+  flex-grow: 1;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: aliceblue;
+  border-right: 1px solid lightgray;
+}
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  height: 50px;
+}
+.avatar {
+  cursor: pointer;
+  margin: 10px;
+}
+.input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  background-color: #e1e1e1;
+  color: gray;
+  border-radius: 5px;
+}
+.input > input {
+  border: none;
+  background: transparent;
+  outline: none;
+}
