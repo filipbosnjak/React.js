@@ -1,13 +1,12 @@
 import { useState } from "react";
 import "./App.css";
 import { UseFetch } from "./hooks/UseFetch";
+import { API_KEY } from "./ApiKey";
 
-function App() {
+const App = () => {
   //api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
 
   //api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
-
-  const API_KEY = "d13554ae4ea1eafe84423c92d4bdbcf5";
 
   const [city, setCity] = useState("London");
 
@@ -18,6 +17,6 @@ function App() {
       <pre>{JSON.stringify(data, null, 2)}</pre>
     </div>
   );
-}
+};
 
 export default App;
