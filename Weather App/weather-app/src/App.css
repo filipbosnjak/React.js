@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+.App {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url("./img/bg.jpg") no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+}
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 50vh;
+}
+.icon {
+  font-size: 150px;
+  animation: rotation infinite linear 13s;
+}
+.content {
+  width: 83vw;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(3px);
+  margin-bottom: 20px;
+}
+.weatherCard {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.location {
+  font-size: 20px;
+  padding: 10px 15px;
+  width: 100%;
+}
+.temp {
+  font-size: 20px;
+  width: 70vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.temp .main {
+  font-size: 45px;
+  animation: blink infinite 2s ease-in-out;
+}
+.description {
+  font-size: 28px;
+}
+.initialButton {
+  width: 160px;
+  height: 40px;
+  color: aliceblue;
+  font-size: 16px;
+  font-weight: 300;
+  outline: none;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(3px);
+  margin-bottom: 20px;
+  transition: 0.5s ease-in-out;
+}
+.initialButton:hover {
+  transform: scale(1.1);
+}
+.getButton {
+  width: 110px;
+  height: 30px;
+  color: aliceblue;
+  font-size: 15px;
+  font-weight: 300;
+  outline: none;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(3px);
+  margin-bottom: 20px;
+  transition: 0.5s ease-in-out;
+}
+.input {
+  margin-right: 5px;
+  width: 180px;
+  height: 30px;
+  padding: 5px;
+  color: aliceblue;
+  font-size: 16px;
+  font-weight: 300;
+  outline: none;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(3px);
+  margin-bottom: 20px;
+  transition: 0.5s ease-in-out;
+}
+.getButton:hover {
+  transform: scale(1.1);
+}
+::placeholder {
+  color: white;
+  opacity: 0.6;
+}
+@keyframes bouncing {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes blink {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.07);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
