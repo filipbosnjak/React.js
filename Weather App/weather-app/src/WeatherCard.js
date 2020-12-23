@@ -61,6 +61,18 @@ const WeatherCard = (props) => {
         Min: {Math.round(toCelsius(temp_min))}&deg;C Max:{" "}
         {Math.round(toCelsius(temp_max))}&deg;C
       </div>
+      <div className="footer">
+        Find the code on my
+        <a
+          className="link"
+          href="https://github.com/filipbosnjak/React.js/tree/master/Weather%20App/weather-app"
+          target="_blank"
+          rel="noreferrer"
+        >
+          &nbsp;Github&nbsp;
+        </a>
+        page.
+      </div>
     </div>
   );
 };

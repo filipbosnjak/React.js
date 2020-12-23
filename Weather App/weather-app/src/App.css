@@ -46,7 +46,7 @@
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-left: 1px solid rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(3px);
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 .weatherCard {
   height: 100vh;
@@ -139,6 +139,26 @@
   color: white;
   opacity: 0.6;
 }
+.link {
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s ease-in-out;
+  margin: 0px 2px;
+  color: rgb(154, 184, 240);
+}
+.link:hover {
+  transform: scale(1.1);
+}
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  font-weight: 300;
+  margin: 10px;
+}
+
 @keyframes hover {
   0% {
     transform: translateX(0px);
