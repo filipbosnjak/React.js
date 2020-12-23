@@ -1,5 +1,3 @@
-import { UseFetch } from "../hooks/UseFetch";
-
 const initialState = {};
 
 export const weatherReducer = (state = initialState, action) => {

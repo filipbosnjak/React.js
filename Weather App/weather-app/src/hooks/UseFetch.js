@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-
 export const UseFetch = (url) => {
   const state = null;
   fetch(url)

@@ -5,15 +5,15 @@ import App from "./App";
 
 import { applyMiddleware, createStore, compose } from "redux";
 import { Provider } from "react-redux";
-import { weatherReducer } from "./reducers/weatherReducer";
 import thunk from "redux-thunk";
+import rootReducer from "./reducers/rootReducer";
 
 const enhancers = [
   applyMiddleware(thunk),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 ];
 
-const store = createStore(weatherReducer, compose(...enhancers));
+const store = createStore(rootReducer, compose(...enhancers));
 
 ReactDOM.render(
   <React.StrictMode>

@@ -24,7 +24,12 @@
 }
 .icon {
   font-size: 150px;
+}
+.rotate {
   animation: rotation infinite linear 13s;
+}
+.hover {
+  animation: hover infinite ease-in-out 2s;
 }
 .content {
   width: 83vw;
@@ -94,7 +99,7 @@
   height: 30px;
   color: aliceblue;
   font-size: 15px;
-  font-weight: 300;
+  font-weight: 400;
   outline: none;
   box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
@@ -134,15 +139,15 @@
   color: white;
   opacity: 0.6;
 }
-@keyframes bouncing {
+@keyframes hover {
   0% {
-    transform: translateY(0px);
+    transform: translateX(0px);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateX(-10px);
   }
   100% {
-    transform: translateY(0px);
+    transform: translateX(0px);
   }
 }
 @keyframes rotation {

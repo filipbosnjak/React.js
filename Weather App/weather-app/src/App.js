@@ -1,5 +1,4 @@
-import { useEffect, useState, useMemo } from "react";
-import { UseFetch } from "./hooks/UseFetch";
+import { useEffect, useState } from "react";
 import { API_KEY } from "./ApiKey";
 
 import "./App.css";
@@ -8,17 +7,9 @@ import WeatherCard from "./WeatherCard";
 import { connect } from "react-redux";
 
 const App = (props) => {
-  //api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
-
-  //api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
-
-  const { coordsFetch, cityFetch } = props;
+  const { coordsFetch, getIcon } = props;
 
   const [data, setData] = useState(props.data.data);
-
-  const [weatherIcon, setWeatherIcon] = useState();
-
-  console.log(props.data.data);
 
   const [coords, setCoords] = useState({});
 
@@ -26,7 +17,6 @@ const App = (props) => {
   useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
-        console.log("called");
         setCoords({
           lat: position.coords.latitude,
           long: position.coords.longitude,
@@ -39,69 +29,20 @@ const App = (props) => {
 
   useEffect(() => {
     setData(props.data.data);
-  }, [props.data.data]);
+    if (props.data.data !== undefined && props.data.data.cod !== "404") {
+      getIcon(props.data.data.weather[0].id);
+    }
+  }, [props.data.data, getIcon]);
   const { lat, long } = coords;
 
   const coordsUrl = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${API_KEY}`;
 
-  const weatherIcons = {
-    thunderstorm: "wi-thunderstorm",
-    drizzle: "wi-sleet",
-    rain: "wi-storm-showers",
-    snow: "wi-snow",
-    atmosphere: "wi-fog",
-    clear: "wi-day-sunny",
-    clouds: "wi-day-fog",
-  };
-
-  const getWeatherIcon = (weatherIcons, range) => {
-    switch (true) {
-      case range >= 200 && range < 232:
-        return weatherIcons.thunderstorm;
-        break;
-      case range >= 300 && range <= 321:
-        return weatherIcons.drizzle;
-        break;
-      case range >= 500 && range <= 521:
-        return weatherIcons.rain;
-        break;
-      case range >= 600 && range <= 622:
-        return weatherIcons.snow;
-        break;
-      case range >= 701 && range <= 781:
-        return weatherIcons.atmosphere;
-        break;
-      case range === 800:
-        return weatherIcons.clear;
-        break;
-      case range >= 801 && range <= 804:
-        return weatherIcons.clouds;
-        break;
-
-      default:
-        setWeatherIcon({ icon: weatherIcons.clouds });
-    }
-  };
   //setData(response.data); <- THIS IS A VERY BAD IDEA
 
-  // const fetchData = async (coordsUrl) => {
-  //   try {
-  //     const response = await fetch(coordsUrl);
-  //     const weatherData = await response.json();
-  //     setData({
-  //       data: weatherData,
-  //       fetching: false,
-  //     });
-  //   } catch (error) {}
-  // };
-
-  // const reFetch = (cityNameUrl) => {
-  //   UseFetch(cityNameUrl);
-  // };
   return (
     <div>
       {data ? (
-        data.cod == 200 ? (
+        data.cod === 200 ? (
           <div className="App">
             <WeatherCard
               city={data.name}
@@ -110,11 +51,10 @@ const App = (props) => {
               temp_max={data.main.temp_max}
               feel={data.main.feels_like}
               des={data.weather[0].main}
-              icon={() => getWeatherIcon(weatherIcons)}
             />
           </div>
         ) : (
-          <p>404</p>
+          <p className="App">404</p>
         )
       ) : (
         <div className="App">
@@ -147,12 +87,19 @@ const mapDispatchToProps = (dispatch) => {
         })
         .catch((err) => console.log(err));
     },
+    getIcon: (iconId) => {
+      dispatch({
+        type: "GET_ICON",
+        payload: iconId,
+      });
+    },
   };
 };
 
 const mapStateToProps = (state) => {
   return {
-    data: state,
+    data: state.weatherReducer,
+    icon: state.iconReducer,
   };
 };
 

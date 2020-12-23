@@ -8,8 +8,8 @@ const WeatherCard = (props) => {
     return temp - 273.1;
   };
 
-  const { city, temp, temp_min, temp_max, feel, des, cityFetch, icon } = props;
-  console.log(icon);
+  const { city, temp, temp_min, temp_max, feel, des, cityFetch } = props;
+  console.log(props);
   const [newCity, setNewCity] = useState("");
   const cityUrl = `http://api.openweathermap.org/data/2.5/weather?q=${newCity}&appid=${API_KEY}`;
   const handleChange = (e) => {
@@ -20,7 +20,11 @@ const WeatherCard = (props) => {
   return (
     <div className="weatherCard">
       <div className="iconContainer">
-        <i className="wi wi-day-sunny icon"></i>
+        <i
+          className={`wi ${props.icon.icon} icon ${
+            props.icon.icon === "wi-day-sunny" ? "rotate" : "hover"
+          }`}
+        ></i>
       </div>
       <div className="content">
         <p className="location">
@@ -31,6 +35,7 @@ const WeatherCard = (props) => {
         <form
           onSubmit={(e) => {
             e.preventDefault();
+            console.log(cityUrl);
             cityFetch(cityUrl);
             setNewCity("");
           }}
@@ -63,6 +68,7 @@ const WeatherCard = (props) => {
 const mapStateToProps = (state) => {
   return {
     data: state.weatherReducer,
+    icon: state.iconReducer,
   };
 };
 const mapDispatchToProps = (dispatch) => {
@@ -80,6 +86,12 @@ const mapDispatchToProps = (dispatch) => {
           });
         })
         .catch((err) => console.log(err));
+    },
+    getIcon: (iconId) => {
+      dispatch({
+        type: "GET_ICON",
+        payload: iconId,
+      });
     },
   };
 };
